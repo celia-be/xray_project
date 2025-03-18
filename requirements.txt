@@ -1,0 +1,7 @@
+streamlit
+openai>=1.0.0
+requests
+pillow
+numpy
+
+#ici requirements que pour frontend!
