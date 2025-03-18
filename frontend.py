@@ -8,7 +8,8 @@ import numpy as np
 from openai import OpenAI
 
 # Init OpenAI client
-client = OpenAI(api_key="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")  # ⬅️ Remplace par ta vraie clé API OpenAI
+#client = OpenAI(api_key="..")  # ⬅️ Remplace par ta vraie clé API OpenAI
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Streamlit settings
 st.set_page_config(
