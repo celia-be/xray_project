@@ -20,66 +20,24 @@ st.set_page_config(
 )
 
 # Custom CSS
-# st.markdown("""
-#     <style>
-#     html, body, [class*="css"] {
-#         background-color: #121212 !important;
-#         color: #FAFAFA !important;
-#     }
-#     .uploadedFile {display: none;}
-#     .stImage > img {
-#         border-radius: 8px;
-#         border: 1px solid #555;
-#         width: 300px !important;
-#     }
-#     .green-box {
-#         background-color: #003300;
-#         color: #C8FACC;
-#         padding: 1rem;
-#         border-radius: 10px;
-#         border: 1px solid #00cc44;
-#         margin-bottom: 1rem;
-#         text-align: center;
-#     }
-#     </style>
-# """, unsafe_allow_html=True)
-
 st.markdown("""
     <style>
-    /* Set custom background */
-    .stApp {
-        background: url('background.jpg') no-repeat center center fixed;
-        background-size: cover;
+    html, body, [class*="css"] {
+        background-color: #121212 !important;
+        color: #000000 !important;
     }
-
-    /* Optional overlay (dark transparent) */
-    .stApp::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.85);  /* dark overlay */
-        z-index: -1;
+    .uploadedFile {display: none;}
+    .stImage > img {
+        border-radius: 8px;
+        border: 1px solid #555;
+        width: 300px !important;
     }
-
-    /* General text styling */
-    html, body {
-        color: #FAFAFA;
-        font-family: 'Segoe UI', sans-serif;
-    }
-
-    h1, h2, h3, h4 {
-        color: #00FFD2;
-    }
-
     .green-box {
-        background-color: #002B28;
-        color: #A0FFD6;
+        background-color: #003300;
+        color: #C8FACC;
         padding: 1rem;
         border-radius: 10px;
-        border: 1px solid #00FFB3;
+        border: 1px solid #00cc44;
         margin-bottom: 1rem;
         text-align: center;
     }
