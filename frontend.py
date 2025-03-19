@@ -111,20 +111,21 @@ st.markdown("""
         color: #2b6ea7;
     }
 
-    /* --- Custom Analyze Button --- */
-    button[kind="primary"] {
-        background-color: #4a4a4a !important;
-        color: white !important;
-        border: 1px solid #888 !important;
-        border-radius: 8px !important;
-        padding: 0.6em 1.2em !important;
+    /* 🔘 Custom style for the Streamlit button */
+    div.stButton > button {
+        background-color: #4a4a4a;
+        color: white;
+        border: 1px solid #888;
+        border-radius: 8px;
+        padding: 0.6em 1.2em;
         font-weight: bold;
         transition: background-color 0.2s ease;
     }
 
-    button[kind="primary"]:hover {
-        background-color: #6a6a6a !important;
-        border-color: #aaa !important;
+    div.stButton > button:hover {
+        background-color: #6a6a6a;
+        border-color: #aaa;
+        color: white;
     }
     </style>
 """, unsafe_allow_html=True)
