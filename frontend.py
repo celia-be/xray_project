@@ -157,7 +157,7 @@ if uploaded_file:
             # ---- SHAP Interpretation (independent) ----
             if predicted_class.lower() == "fractured":
                 try:
-                    with st.spinner("📷 Loading SHAP interpretation..."):
+                    with st.spinner("Graphical localization..."):
                         shap_response = requests.post(url_shap, files=files_shap)
                         shap_response.raise_for_status()
                         shap_data = shap_response.json()
