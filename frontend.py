@@ -42,7 +42,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("Fracture Detection Interface")
+st.title("Xray Advisor Solutions")
 st.write("Upload a radiograph to receive classification and explanation.")
 
 uploaded_file = st.file_uploader("Upload Radiograph", type=["jpg", "jpeg", "png", "webp", "avif"], label_visibility="collapsed")
@@ -114,7 +114,7 @@ if uploaded_file:
             # ---- OpenAI Recommendation (independent) ----
             if predicted_class.lower() == "fractured":
                 try:
-                    with st.spinner("📋 Generating medical recommendation..."):
+                    with st.spinner("Generating medical recommendation..."):
                         prompt = f"""
                         A radiograph was classified as a bone fracture with {confidence:.2%} confidence.
                         Provide a short and sarcastical joke about the confidence. Then, give a medical recommendation and theoretical explanation on fractures.
@@ -129,8 +129,32 @@ if uploaded_file:
                             max_tokens=300
                         )
                         explanation = completion.choices[0].message.content
-                        st.markdown("### Medical Recommendation")
-                        st.info(explanation)
+                        st.markdown("### AI Medical Assistant")
+                        st.markdown(
+                            f"""
+                            <div style="display: flex; align-items: flex-start; margin-top: 1rem;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+                                    style="width: 40px; height: 40px; border-radius: 50%; margin-right: 0.75rem;"
+                                    alt="AI Avatar">
+                                <div style="
+                                    background-color: #1f1f1f;
+                                    border: 1px solid #333;
+                                    padding: 1rem;
+                                    border-radius: 10px;
+                                    font-family: 'Courier New', monospace;
+                                    font-size: 0.9rem;
+                                    color: #fafafa;
+                                    max-width: 600px;
+                                    line-height: 1.5;
+                                ">
+                                    {explanation.replace('\n', '<br>')}
+                                </div>
+                            </div>
+                            """,
+                            unsafe_allow_html=True
+                        )
+
+
                 except Exception as e:
                     st.warning(f"⚠️ Could not generate explanation: {e}")
 
