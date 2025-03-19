@@ -6,6 +6,8 @@ import io
 import os
 import numpy as np
 from openai import OpenAI
+import time
+
 
 # Init OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY")) # pour tester en local mettre direct la clé client = OpenAI(api_key="")
@@ -42,7 +44,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("Xray Advisor Solutions")
+st.title("Xray Vision Solutions")
 st.write("Upload a radiograph to receive classification and explanation.")
 
 uploaded_file = st.file_uploader("Upload Radiograph", type=["jpg", "jpeg", "png", "webp", "avif"], label_visibility="collapsed")
@@ -88,7 +90,7 @@ if uploaded_file:
 
             # ---- YOLO Prediction ----
             try:
-                with st.spinner("🧠 Predicting with YOLO..."):
+                with st.spinner("Predicting..."):
                     response = requests.post(url_yolo, files=files_yolo)
                     response.raise_for_status()
                     data = response.json()
@@ -114,51 +116,38 @@ if uploaded_file:
             # ---- OpenAI Recommendation (independent) ----
             if predicted_class.lower() == "fractured":
                 try:
-                    with st.spinner("Generating medical recommendation..."):
-                        prompt = f"""
-                        A radiograph was classified as a bone fracture with {confidence:.2%} confidence.
-                        Provide a short and sarcastical joke about the confidence. Then, give a medical recommendation and theoretical explanation on fractures.
-                        """
-                        completion = client.chat.completions.create(
-                            model="gpt-3.5-turbo",
-                            messages=[
-                                {"role": "system", "content": "You are a medical assistant specialized in radiology."},
-                                {"role": "user", "content": prompt}
-                            ],
-                            temperature=0.4,
-                            max_tokens=300
-                        )
-                        explanation = completion.choices[0].message.content
-                        # Juste avant le bloc HTML
-                        explanation_html = explanation.replace("\n", "<br>")
+                    dots_placeholder = st.empty()
+                    dots = ["", ".", "..", "..."]
 
-                        # Puis dans le markdown HTML
-                        st.markdown("### AI Medical Assistant")
-                        st.markdown(
-                            f"""
-                            <div style="display: flex; align-items: flex-start; margin-top: 1rem;">
-                                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
-                                    style="width: 40px; height: 40px; border-radius: 50%; margin-right: 0.75rem;"
-                                    alt="AI Avatar">
-                                <div style="
-                                    background-color: #1f1f1f;
-                                    border: 1px solid #333;
-                                    padding: 1rem;
-                                    border-radius: 10px;
-                                    font-family: 'Courier New', monospace;
-                                    font-size: 0.9rem;
-                                    color: #fafafa;
-                                    max-width: 600px;
-                                    line-height: 1.5;
-                                ">
-                                    {explanation_html}
-                                </div>
-                            </div>
-                            """,
-                            unsafe_allow_html=True
-                        )
+                    # Animation "ChatGPT typing..."
+                    for i in range(8):
+                        dots_placeholder.markdown(f"**🧠 Medical AI is thinking{dots[i % 4]}**")
+                        time.sleep(0.4)
 
+                    prompt = f"""
+                    A radiograph was classified as a bone fracture with {confidence:.2%} confidence.
+                    Provide a short and sarcastical joke about the confidence. Then, give a medical recommendation and theoretical explanation on fractures.
+                    """
+                    completion = client.chat.completions.create(
+                        model="gpt-3.5-turbo",
+                        messages=[
+                            {"role": "system", "content": "You are a medical assistant specialized in radiology."},
+                            {"role": "user", "content": prompt}
+                        ],
+                        temperature=0.4,
+                        max_tokens=300
+                    )
 
+                    explanation = completion.choices[0].message.content
+                    dots_placeholder.empty()
+
+                    # Typing effect
+                    full_text = ""
+                    message_box = st.empty()
+                    for char in explanation:
+                        full_text += char
+                        message_box.markdown(f"🧠 **AI Medical Assistant:**\n\n{full_text}")
+                        time.sleep(0.01)
 
                 except Exception as e:
                     st.warning(f"⚠️ Could not generate explanation: {e}")
