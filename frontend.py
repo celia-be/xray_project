@@ -123,7 +123,7 @@ st.markdown("""
     }
 
     div.stButton > button:hover {
-        background-color: #6a6a6a;
+        background-color: #2b6ea7;
         border-color: #aaa;
         color: white;
     }
