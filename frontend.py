@@ -110,6 +110,22 @@ st.markdown("""
         text-align: center;
         color: #2b6ea7;
     }
+
+    /* --- Custom Analyze Button --- */
+    button[kind="primary"] {
+        background-color: #4a4a4a !important;
+        color: white !important;
+        border: 1px solid #888 !important;
+        border-radius: 8px !important;
+        padding: 0.6em 1.2em !important;
+        font-weight: bold;
+        transition: background-color 0.2s ease;
+    }
+
+    button[kind="primary"]:hover {
+        background-color: #6a6a6a !important;
+        border-color: #aaa !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
