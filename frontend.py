@@ -126,10 +126,10 @@ if uploaded_file:
 
                     prompt = f"""
                     A radiograph was classified as a bone fracture with {confidence:.2%} confidence.
-                    Provide a short and sarcastical joke about the confidence. Then, give a medical recommendation and theoretical explanation on fractures.
+                    Provide a medical recommendation and theoretical explanation on fractures.
                     """
                     completion = client.chat.completions.create(
-                        model="gpt-3.5-turbo",
+                        model="gpt-4",
                         messages=[
                             {"role": "system", "content": "You are a medical assistant specialized in radiology."},
                             {"role": "user", "content": prompt}
