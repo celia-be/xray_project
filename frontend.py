@@ -19,52 +19,120 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-st.markdown("""
-    <style>
-    body {
-        background-color: #121212 !important;
-        color: #f0f0f0 !important;
-    }
-    .stApp {
-        background-color: #121212 !important;
-    }
-    header, footer {
-        visibility: hidden;
-    }
-    .block-container {
-        padding-top: 2rem;
-    }
-    </style>
-""", unsafe_allow_html=True)
+# st.markdown("""
+#     <style>
+#     body {
+#         background-color: #121212 !important;
+#         color: #f0f0f0 !important;
+#     }
+#     .stApp {
+#         background-color: #121212 !important;
+#     }
+#     header, footer {
+#         visibility: hidden;
+#     }
+#     .block-container {
+#         padding-top: 2rem;
+#     }
+#     </style>
+# """, unsafe_allow_html=True)
 
 
-# Custom CSS
+# # Custom CSS
+# st.markdown("""
+#     <style>
+#     html, body, [class*="css"] {
+#         background-color: #000000 !important;
+#         color: #FAFAFA !important;
+#     }
+#     .uploadedFile {display: none;}
+#     .stImage > img {
+#         border-radius: 10px;
+#         border: 1px solid #555;
+#         width: 300px !important;
+#     }
+#     .green-box {
+#         background-color: #003300;
+#         color: #C8FACC;
+#         padding: 1rem;
+#         border-radius: 10px;
+#         border: 1px solid #00cc44;
+#         margin-bottom: 1rem;
+#         text-align: center;
+#         width: 400px;  /* 👈 correspond exactement à la largeur de l'image */
+
+#     }
+#     </style>
+# """, unsafe_allow_html=True)
+
+# Custom Medical High-Tech CSS
 st.markdown("""
     <style>
-    html, body, [class*="css"] {
-        background-color: #000000 !important;
-        color: #FAFAFA !important;
+    /* Global dark background and font */
+    html, body, [class*="css"]  {
+        background-color: #0d1117 !important;
+        color: #d1d5da !important;
+        font-family: 'Segoe UI', sans-serif;
     }
+
+    /* Upload button hidden */
     .uploadedFile {display: none;}
+
+    /* Image border */
     .stImage > img {
-        border-radius: 10px;
-        border: 1px solid #555;
+        border-radius: 12px;
+        border: 1px solid #444c56;
         width: 300px !important;
     }
+
+    /* Prediction result box */
     .green-box {
-        background-color: #003300;
-        color: #C8FACC;
+        background-color: #052e16;
+        color: #b6fcd5;
         padding: 1rem;
-        border-radius: 10px;
-        border: 1px solid #00cc44;
+        border-radius: 12px;
+        border: 1px solid #16a34a;
         margin-bottom: 1rem;
         text-align: center;
-        width: 400px;  /* 👈 correspond exactement à la largeur de l'image */
+        box-shadow: 0px 0px 15px rgba(22, 163, 74, 0.3);
+        font-size: 1.1rem;
+    }
 
+    /* Title + subtitle alignment */
+    .stApp h1, .stApp h2 {
+        text-align: center;
+        color: #58a6ff;
+    }
+
+    /* Medical Recommendation Box */
+    .recommendation-box {
+        background-color: #161b22;
+        border-left: 5px solid #58a6ff;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1.5rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #c9d1d9;
+        white-space: pre-wrap;
+        font-family: 'Courier New', monospace;
+    }
+
+    /* Button style */
+    button[kind="primary"] {
+        background-color: #238636;
+        color: white;
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        border: none;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    button[kind="primary"]:hover {
+        background-color: #2ea043;
     }
     </style>
 """, unsafe_allow_html=True)
-
 
 
 st.title("Xray Vision Solutions")
