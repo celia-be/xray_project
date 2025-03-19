@@ -23,8 +23,8 @@ st.set_page_config(
 st.markdown("""
     <style>
     html, body, [class*="css"] {
-        background-color: #000000 !important;
-        color: #FAFAFA !important;
+        background-color: #121212 !important;
+        color: #000000 !important;
     }
     .uploadedFile {display: none;}
     .stImage > img {
