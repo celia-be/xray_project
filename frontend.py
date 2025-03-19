@@ -129,6 +129,10 @@ if uploaded_file:
                             max_tokens=300
                         )
                         explanation = completion.choices[0].message.content
+                        # Juste avant le bloc HTML
+                        explanation_html = explanation.replace("\n", "<br>")
+
+                        # Puis dans le markdown HTML
                         st.markdown("### AI Medical Assistant")
                         st.markdown(
                             f"""
@@ -147,12 +151,13 @@ if uploaded_file:
                                     max-width: 600px;
                                     line-height: 1.5;
                                 ">
-                                    {explanation.replace('\n', '<br>')}
+                                    {explanation_html}
                                 </div>
                             </div>
                             """,
                             unsafe_allow_html=True
                         )
+
 
 
                 except Exception as e:
