@@ -20,29 +20,91 @@ st.set_page_config(
 )
 
 # Custom CSS
+# st.markdown("""
+#     <style>
+#     html, body, [class*="css"] {
+#         background-color: #121212 !important;
+#         color: #FAFAFA !important;
+#     }
+#     .uploadedFile {display: none;}
+#     .stImage > img {
+#         border-radius: 8px;
+#         border: 1px solid #555;
+#         width: 300px !important;
+#     }
+#     .green-box {
+#         background-color: #003300;
+#         color: #C8FACC;
+#         padding: 1rem;
+#         border-radius: 10px;
+#         border: 1px solid #00cc44;
+#         margin-bottom: 1rem;
+#         text-align: center;
+#     }
+#     </style>
+# """, unsafe_allow_html=True)
+
 st.markdown("""
     <style>
+    /* GLOBAL BACKGROUND */
     html, body, [class*="css"] {
-        background-color: #121212 !important;
+        background-color: #0e1117 !important;
         color: #FAFAFA !important;
+        font-family: 'Segoe UI', sans-serif;
     }
+
+    /* HEADINGS */
+    h1, h2, h3, h4 {
+        color: #00FFB3;
+    }
+
+    /* UPLOADER HIDDEN FILE NAME */
     .uploadedFile {display: none;}
-    .stImage > img {
+
+    /* BUTTON STYLE */
+    .stButton>button {
+        background-color: #007B8A;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
         border-radius: 8px;
-        border: 1px solid #555;
-        width: 300px !important;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
     }
+
+    .stButton>button:hover {
+        background-color: #00B8C4;
+    }
+
+    /* IMAGE STYLE */
+    .stImage>img {
+        border: 1px solid #444;
+        border-radius: 10px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* INFO / CHATBOX LOOK */
+    .stAlert {
+        background-color: #1e1e1e !important;
+        color: #C7FCEC !important;
+        border: 1px solid #00B8C4 !important;
+        border-radius: 10px;
+    }
+
+    /* GREEN RESULT BOX */
     .green-box {
-        background-color: #003300;
-        color: #C8FACC;
+        background-color: #002B28;
+        color: #A0FFD6;
         padding: 1rem;
         border-radius: 10px;
-        border: 1px solid #00cc44;
+        border: 1px solid #00FFB3;
         margin-bottom: 1rem;
         text-align: center;
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 st.title("Xray Vision Solutions")
 st.write("Upload a radiograph to receive classification and explanation.")
