@@ -127,6 +127,16 @@ st.markdown("""
         border-color: #aaa;
         color: white;
     }
+
+    /* Remove red outline on click/focus */
+    div.stButton > button:focus,
+    div.stButton > button:active {
+        background-color: #58a6ff !important;
+        color: white !important;
+        border-color: #58a6ff !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
