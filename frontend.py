@@ -97,7 +97,7 @@ st.markdown("""
     .green-box {
         background-color: #003300;
         color: #ffffff;
-        padding: 1rem;
+        padding: 0.5rem 1rem;
         border-radius: 10px;
         border: 1px solid #00cc44;
         margin-bottom: 1rem;
