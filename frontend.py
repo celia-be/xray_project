@@ -19,52 +19,99 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+# st.markdown("""
+#     <style>
+#     body {
+#         background-color: #121212 !important;
+#         color: #FAFAFA !important;
+#     }
+#     .stApp {
+#         background-color: #121212 !important;
+#     }
+#     header, footer {
+#         visibility: hidden;
+#     }
+#     .block-container {
+#         padding-top: 2rem;
+#     }
+#     </style>
+# """, unsafe_allow_html=True)
+
+
+# # Custom CSS
+# st.markdown("""
+#     <style>
+#     html, body, [class*="css"] {
+#         background-color: #000000 !important;
+#         color: #FAFAFA !important;
+#     }
+#     .uploadedFile {display: none;}
+#     .stImage > img {
+#         border-radius: 10px;
+#         border: 1px solid #555;
+#         width: 300px !important;
+#     }
+#     .green-box {
+#         background-color: #003300;
+#         color: #C8FACC;
+#         padding: 1rem;
+#         border-radius: 10px;
+#         border: 1px solid #00cc44;
+#         margin-bottom: 1rem;
+#         text-align: center;
+#         width: 400px;  /* 👈 correspond exactement à la largeur de l'image */
+
+#     }
+#     </style>
+# """, unsafe_allow_html=True)
+
+# Custom High-Tech Medical CSS
 st.markdown("""
     <style>
-    body {
+    /* General dark background and white text */
+    html, body, .stApp, [class*="css"] {
         background-color: #121212 !important;
-        color: #FAFAFA !important;
+        color: #ffffff !important;
     }
-    .stApp {
-        background-color: #121212 !important;
-    }
+
+    /* Hide Streamlit header and footer */
     header, footer {
         visibility: hidden;
     }
+
     .block-container {
         padding-top: 2rem;
     }
-    </style>
-""", unsafe_allow_html=True)
 
-
-# Custom CSS
-st.markdown("""
-    <style>
-    html, body, [class*="css"] {
-        background-color: #000000 !important;
-        color: #FAFAFA !important;
-    }
+    /* Hide uploaded file name */
     .uploadedFile {display: none;}
+
+    /* Image styling */
     .stImage > img {
         border-radius: 10px;
         border: 1px solid #555;
         width: 300px !important;
     }
+
+    /* Prediction result box */
     .green-box {
         background-color: #003300;
-        color: #C8FACC;
+        color: #ffffff;
         padding: 1rem;
         border-radius: 10px;
         border: 1px solid #00cc44;
         margin-bottom: 1rem;
         text-align: center;
-        width: 400px;  /* 👈 correspond exactement à la largeur de l'image */
+        width: 400px;  /* Same width as image */
+    }
 
+    /* Title and subtitle */
+    .stApp h1, .stApp h2 {
+        text-align: center;
+        color: #58a6ff;
     }
     </style>
 """, unsafe_allow_html=True)
-
 
 
 
