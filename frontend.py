@@ -28,7 +28,7 @@ st.markdown("""
     }
     .uploadedFile {display: none;}
     .stImage > img {
-        border-radius: 8px;
+        border-radius: 10px;
         border: 1px solid #555;
         width: 300px !important;
     }
