@@ -41,8 +41,6 @@ st.markdown("""
         margin-bottom: 1rem;
         text-align: center;
         width: 400px;  /* 👈 correspond exactement à la largeur de l'image */
-        margin-left: auto;
-        margin-right: auto;
 
     }
     </style>
