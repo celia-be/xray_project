@@ -40,7 +40,7 @@ st.markdown("""
         border: 1px solid #00cc44;
         margin-bottom: 1rem;
         text-align: center;
-        width: 300px;  /* 👈 correspond exactement à la largeur de l'image */
+        width: 400px;  /* 👈 correspond exactement à la largeur de l'image */
         margin-left: auto;
         margin-right: auto;
 
