@@ -108,7 +108,7 @@ st.markdown("""
     /* Title and subtitle */
     .stApp h1, .stApp h2 {
         text-align: center;
-        color: #58a6ff;
+        color: #3c8dbc;
     }
     </style>
 """, unsafe_allow_html=True)
