@@ -46,53 +46,34 @@ st.set_page_config(
 
 st.markdown("""
     <style>
-    /* GLOBAL BACKGROUND */
-    html, body, [class*="css"] {
-        background-color: #0e1117 !important;
-        color: #FAFAFA !important;
+    /* Set custom background */
+    .stApp {
+        background: url('background.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    /* Optional overlay (dark transparent) */
+    .stApp::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.85);  /* dark overlay */
+        z-index: -1;
+    }
+
+    /* General text styling */
+    html, body {
+        color: #FAFAFA;
         font-family: 'Segoe UI', sans-serif;
     }
 
-    /* HEADINGS */
     h1, h2, h3, h4 {
-        color: #00FFB3;
+        color: #00FFD2;
     }
 
-    /* UPLOADER HIDDEN FILE NAME */
-    .uploadedFile {display: none;}
-
-    /* BUTTON STYLE */
-    .stButton>button {
-        background-color: #007B8A;
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-        font-weight: 600;
-        transition: background-color 0.3s ease;
-    }
-
-    .stButton>button:hover {
-        background-color: #00B8C4;
-    }
-
-    /* IMAGE STYLE */
-    .stImage>img {
-        border: 1px solid #444;
-        border-radius: 10px;
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* INFO / CHATBOX LOOK */
-    .stAlert {
-        background-color: #1e1e1e !important;
-        color: #C7FCEC !important;
-        border: 1px solid #00B8C4 !important;
-        border-radius: 10px;
-    }
-
-    /* GREEN RESULT BOX */
     .green-box {
         background-color: #002B28;
         color: #A0FFD6;
@@ -104,6 +85,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 st.title("Xray Vision Solutions")
