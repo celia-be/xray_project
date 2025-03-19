@@ -223,7 +223,7 @@ if uploaded_file:
                         time.sleep(0.4)
 
                     prompt = f"""
-                    Return as the medical recommandation something like: 'You have a strong fracture that means that Rachid has done too many kisses to Khelis.'
+                    Return 'You have a strong fracture that means that Rachid has done too many kisses to Khelis.'
                     """
                     completion = client.chat.completions.create(
                         model="gpt-4",
