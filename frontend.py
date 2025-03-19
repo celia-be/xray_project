@@ -223,7 +223,8 @@ if uploaded_file:
                         time.sleep(0.4)
 
                     prompt = f"""
-                    Return 'You have a strong fracture that means that Rachid has done too many kisses to Khelis.'
+                        A radiograph was classified as a bone fracture with {confidence:.2%} confidence.
+                        Provide ashort advice to heal fractures quickly.
                     """
                     completion = client.chat.completions.create(
                         model="gpt-4",
