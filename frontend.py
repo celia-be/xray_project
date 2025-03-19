@@ -19,11 +19,30 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+st.markdown("""
+    <style>
+    body {
+        background-color: #121212 !important;
+        color: #f0f0f0 !important;
+    }
+    .stApp {
+        background-color: #121212 !important;
+    }
+    header, footer {
+        visibility: hidden;
+    }
+    .block-container {
+        padding-top: 2rem;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
 # Custom CSS
 st.markdown("""
     <style>
     html, body, [class*="css"] {
-        background-color: #111111 !important;
+        background-color: #000000 !important;
         color: #FAFAFA !important;
     }
     .uploadedFile {display: none;}
