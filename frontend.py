@@ -126,7 +126,7 @@ if uploaded_file:
 
                     prompt = f"""
                     A radiograph was classified as a bone fracture with {confidence:.2%} confidence.
-                    Provide a medical recommendation and theoretical explanation on fractures.
+                    Provide a theoretical explanation on fractures, keep it short.
                     """
                     completion = client.chat.completions.create(
                         model="gpt-4",
