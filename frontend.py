@@ -258,3 +258,14 @@ if uploaded_files and len(st.session_state.image_to_report) > 0:
         if st.button("♻️ Reset all associations"):
             st.session_state.image_to_report.clear()
             st.success("All associations have been cleared.")
+
+# note
+# 1 cd frontend
+# 2 git init
+# 3 gh repo create -> follow instruction
+# 4 git add commit push
+
+# if push (please make sure you have the correct repository rights)
+
+# git remote add origin SSH_URL (find it in github)
+# check with: git remote -v
